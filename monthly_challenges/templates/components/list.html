@@ -1,5 +1,1 @@
-<ul>
-    {% for month in months %}
-        <li><a href="{% url 'monthly_challenges' month %}">{{ month|capfirst }}</a></li> 
-    {% endfor %}
-</ul>  
+<li><a href="{% url 'monthly_challenges' month %}">{{ month|capfirst }}</a></li>

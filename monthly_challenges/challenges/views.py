@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 
@@ -31,12 +31,12 @@ def monthly_challenge(request, month):
         challenge_text = challenges[month]    
         return render(request, "challenges/challenge.html", { "month": month, "challenge": challenge_text })
     except:
-      return HttpResponseNotFound("Month not found")
+      raise Http404()
 
 def monthly_challenge_by_number(request, month):
     months = list(challenges.keys())
     if month > len(months):
-        return HttpResponseNotFound("Invalid month")
+        raise Http404()
     
     redirect_month = months[month - 1]
     redirect_path = reverse("monthly_challenges", args=[redirect_month]) # Build the absolute path dinamically

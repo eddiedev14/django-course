@@ -6,5 +6,10 @@
 
     {% block content %}
         <h1>These are our monthly challenges!</h1>
-        {% include 'components/list.html' with months=months %}
+        
+        <ul>
+            {% for month in months %}
+                {% include 'components/list.html' with month=month %}
+            {% endfor %}
+        </ul>
     {% endblock content %}
