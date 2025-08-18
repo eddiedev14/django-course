@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-    <h1>These are our monthly challenges!</h1>
-    <ul>
-        {% for month in months %}
-            <li><a href="{% url 'monthly_challenges' month %}">{{ month|capfirst }}</a></li> 
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'layout/base.html' %}
+
+    {% block page_title %}
+        Dashboard
+    {% endblock page_title %}
+
+    {% block content %}
+        <h1>These are our monthly challenges!</h1>
+        {% include 'components/list.html' with months=months %}
+    {% endblock content %}
