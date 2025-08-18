@@ -19,11 +19,35 @@ challenges = {
 }
 
 def dashboard(request):
-    return HttpResponse("This is the challenges dashboard!")
+    #Create base HTML dashboard structure
+    response_html = f"""
+        <h1>This is the challenges dashboard!</h1>
+        <ul>
+    """
+
+    # Create a list based on the dictionary keys
+    months = list(challenges.keys())
+
+    # Generate dinamically the list items
+    for i in range(len(months)):
+        month = months[i]
+        challenge_url = reverse("monthly_challenges", args=[month])
+        response_html += f"<li><a href='{challenge_url}'>{month.capitalize()}</a></li>"
+
+    # Close the ul tag
+    response_html += "</ul>"
+
+    # Returning HTML
+    return HttpResponse(response_html)
 
 # Dynamic view
 def monthly_challenge(request, month):
-    return HttpResponse(f"The challenge is: { challenges.get(month, 'Month not found') }")
+    dashboard_path = reverse("challenges_dashboard")
+
+    response_html = f"""<h1>The challenge is: { challenges.get(month, 'Month not found') }</h1>
+                        <a href='{dashboard_path}'>Go Back</a>"""
+    
+    return HttpResponse(response_html)
 
 def monthly_challenge_by_number(request, month):
     months = list(challenges.keys())
