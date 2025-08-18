@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+    {% block page_title %}
+        {{month|capfirst}} Challenge
+    {% endblock page_title %}
+    
+    {% block content %}
+        <h1>{{ month|capfirst }} Challenge</h1>
+        <h3>
+            {% if challenge is None  %}
+                There's no challenge for {{ month }}
+            {% else %}
+                {{ challenge }}
+            {% endif %}
+        </h3>
+    {% endblock content %}

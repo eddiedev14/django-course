@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+    {% block page_title %}
+        Dashboard
+    {% endblock page_title %}
+
+    {% block css_files %}
+        <link rel="stylesheet" href="{% static 'challenges/css/dashboard.css' %}">
+    {% endblock css_files %}        
+
+    {% block content %}
+        <h1>These are our monthly challenges!</h1>
+        
+        <ul>
+            {% for month in months %}
+                {% include 'components/list.html' with month=month %}
+            {% endfor %}
+        </ul>
+    {% endblock content %}
