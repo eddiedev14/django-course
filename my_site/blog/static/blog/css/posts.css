@@ -1,0 +1,32 @@
+@import url("components/post.css");
+
+body{
+    background-color: #f8f7f7
+}
+
+.posts{
+    padding: 36px 144px 48px;
+}
+
+.posts__container{
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.posts__title{
+    font-size: 32px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card{
+    width: 240px;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}

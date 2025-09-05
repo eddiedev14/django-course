@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block page_title %} My Blog {% endblock page_title %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+{% endblock css_files %}    
+
+{% block content %}
+
+    <section class="hero">
+        <div class="hero__profile">
+            <img src="{% static 'assets/avatar.jpeg' %}" alt="Eddie Picture" class="profile__img">
+            <h1 class="profile__title">EDDIE'S BLOG</h1>
+        </div>
+        <p class="hero__caption">Hi, I am Eddie and I love to blog about tech and the world</p>
+    </section>
+
+    <main class="posts">
+        <div class="posts__container">
+            <h4 class="posts__title">My Latest Thoughts</h4>
+
+            <section class="cards">
+                {% for post in posts %}
+                    {% include 'blog/components/post.html' with post=post %}
+                {% endfor %}
+            </section>
+        </div>
+    </main>
+{% endblock content %}
