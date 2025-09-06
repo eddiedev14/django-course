@@ -1,5 +1,5 @@
 from datetime import date
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
 posts = [
@@ -98,3 +98,17 @@ def home(request):
 
 def allPosts(request):
     return render(request, "blog/posts.html", { "posts": posts })
+
+def singlePost(request, path):
+    selectedPost = None
+
+    for post in posts:
+        if post["slug"] == path:
+            selectedPost = post
+            break
+
+    if selectedPost is not None:
+        return render(request, "blog/singlePost.html", { "post": post })
+    else:
+        #TODO: Ver video de 404 Page error
+        raise Http404()

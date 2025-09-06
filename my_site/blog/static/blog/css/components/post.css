@@ -28,19 +28,28 @@
 
 .card{
     width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
     cursor: pointer;
     transition: .3s ease-in-out background-color, .3s ease-in-out color;
     border-radius: 8px;
     padding: 12px;
 }
 
+.card a{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: #000
+}
+
 .card:hover{
     background-color: #410293;
+}
+
+.card:hover a{
     color: #fff;
 }
+
 
 .card__top{
     display: flex;

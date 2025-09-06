@@ -1,9 +1,11 @@
 {% load static %}
 
 <div class="card">
-    <div class="card__top">
-        <img src="{% static 'blog/assets/posts/' %}{{ post.image }}" alt="" class="card__img">
-        <h5 class="card__title">{{ post.title }}</h5>
-    </div>
-    <p class="card__description">{{ post.description }}</p>
+    <a href="{% url 'single_post' post.slug %}">
+        <div class="card__top">
+            <img src="{% static 'blog/assets/posts/' %}{{ post.image }}" class="card__img">
+            <h5 class="card__title">{{ post.title }}</h5>
+        </div>
+        <p class="card__description">{{ post.description }}</p>
+    </a>
 </div>
