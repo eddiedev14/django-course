@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block page_title %}{{ post.title }}{% endblock page_title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/css/singlePost.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+    <section class="post__header">
+        <h1 class="post__title">{{ post.title }}</h1>
+        <div class="post__extra">
+            <img src="{% static 'blog/assets/posts/' %}{{ post.image }}" class="post__img" alt="{{ post.title }}">
+            <p class="post__author">By {{ post.author }}</p>
+            <p class="post__date">Last updated on <span>{{ post.lastUpdated }}</span></p>
+        </div>
+    </section>
+
+    <main class="post__wrapper">
+        <p class="post__content">{{ post.content|safe|linebreaksbr|escape }}</p>
+    </main>
+{% endblock content %}
