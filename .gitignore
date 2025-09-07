@@ -2,9 +2,11 @@
 .vscode/
 
 # Entorno virtual
-venv
+**/venv
+**/.env
 
 # Archivos compilados de Python
+*.sqlite
 __pycache__/
 *.py[cod]
 *.pyo
