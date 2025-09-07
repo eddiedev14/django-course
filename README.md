@@ -10,7 +10,6 @@ En este espacio se recopilan ejemplos, ejercicios y proyectos que cubren temas c
 - Admin
 - Relationships
 - Forms
-- Class Views
 - File Uploads
 - Sessions
 
