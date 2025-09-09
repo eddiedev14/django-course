@@ -32,5 +32,8 @@ class Post(models.Model):
         return f"{self.title} ({self.author.first_name} {self.author.last_name})"
     
 class PostTag(models.Model):
-    post = models.OneToOneField(Post, on_delete=models.CASCADE)
-    tag = models.OneToOneField(Tag, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('post', 'tag')  # evita duplicados
