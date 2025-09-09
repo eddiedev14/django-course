@@ -11,9 +11,9 @@
     <section class="post__header">
         <h1 class="post__title">{{ post.title }}</h1>
         <div class="post__extra">
-            <img src="{% static 'blog/assets/posts/' %}{{ post.image }}" class="post__img" alt="{{ post.title }}">
+            <img src="{% static 'blog/assets/posts/' %}{{ post.image_name }}" class="post__img" alt="{{ post.title }}">
             <p class="post__author">By {{ post.author }}</p>
-            <p class="post__date">Last updated on <span>{{ post.lastUpdated }}</span></p>
+            <p class="post__date">Last updated on <span>{{ post.date }}</span></p>
         </div>
     </section>
 

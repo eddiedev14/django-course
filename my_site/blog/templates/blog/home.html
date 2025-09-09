@@ -21,8 +21,8 @@
             <h4 class="posts__title">My Latest Thoughts</h4>
 
             <section class="cards">
-                {% for post in posts %}
-                    {% include 'blog/components/post.html' with post=post %}
+                {% for post_content in posts %}
+                    {% include 'blog/components/post.html' with post=post_content.post tags=post_content.tags %}
                 {% endfor %}
             </section>
         </div>
