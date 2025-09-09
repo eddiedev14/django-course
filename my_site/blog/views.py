@@ -53,7 +53,7 @@ posts = [
         "title": "Tech Trends 2024",
         "description": "Exploring the latest technological innovations shaping our world this year.",
         "image": "tech.jpg",
-        "author": "Eddie Santiago",
+        "author": "Pedri Gonzalez",
         "lastUpdated": date(2024, 10, 20),
         "content": """
             Technology continues to evolve at an unprecedented pace. In 2024, artificial intelligence, quantum computing,
