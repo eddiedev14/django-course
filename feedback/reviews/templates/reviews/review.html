@@ -8,9 +8,15 @@
 <body>
     <form action="" method='POST'>
         {% csrf_token %}
-        
-        <label for='username'>Your Name</label>
-        <input type="text" name='username' id='username'>
+
+        {% comment %} Use form from forms.py {% endcomment %}
+          {% for field in form %}
+                <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+                </div>
+            {% endfor %}
 
         <button type="submit">Send</button>
     </form>
