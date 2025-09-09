@@ -33,7 +33,9 @@ class Post(models.Model):
     
 class PostTag(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name="post_tags")
 
+    def __str__(self):
+        return f"{self.post.title} ({self.tag.caption})"
     class Meta:
         unique_together = ('post', 'tag')  # evita duplicados

@@ -74,3 +74,26 @@
     font-size: 14px;
     font-weight: 300;
 }
+
+.card__tags{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.card__tag{
+    background-color: #410293;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    transition: .3s ease-in-out background-color, .3s ease-in-out color;
+}
+
+.card:hover .card__tag{
+    background-color: #fff;
+    color: #410293;
+}
